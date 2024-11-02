@@ -6,13 +6,7 @@ import java.util.Map;
 public class Order {
     int numberOfPizzas;
     Pizza pizza = new Pizza();
-    Pizzeria pizzeria = new Pizzeria();
     Map<String, Integer> order = new HashMap<>();
-
-    public void orderPizza() {
-        choosePizza();
-        pizzeria.pizzaPreparation();
-    }
 
     public void choosePizza(){
         System.out.println("You chose " + numberOfPizzas + " pizzas");

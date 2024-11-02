@@ -3,8 +3,8 @@ package org.example;
 import java.util.List;
 
 public class Pizza {
-    private List<String> name = List.of("Margarita", "Calabresa", "Quattro Formaggi");
-    private List<Integer> size = List.of(30, 40, 50, 60);
+    private final List<String> name = List.of("Margarita", "Calabresa", "Quattro Formaggi");
+    private final List<Integer> size = List.of(30, 40, 50, 60);
 
 
     public List<Integer> getSize() {
