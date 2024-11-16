@@ -1,27 +1,26 @@
 package org.example;
 
-import java.util.List;
-
 public class Pizza {
-    private final List<String> name = List.of("Margarita", "Calabresa", "Quattro Formaggi");
-    private final List<Integer> size = List.of(30, 40, 50, 60);
+    private final double price;
+    private final String name;
 
-
-    public List<Integer> getSize() {
-        return size;
+    public Pizza(double price, String name) {
+        this.price = price;
+        this.name = name;
     }
 
-    public List<String> getName() {
+    public double getPrice() {
+        return price;
+    }
+
+    public String getName() {
         return name;
     }
 
-    public void listOfPizza() {
-        for (String i : getName()) {
-            System.out.println(i);
-            for (Integer j : getSize()) {
-                System.out.println(j);
-            }
-        }
+    @Override
+    public String toString() {
+        return name + " - " + price + "PLN";
     }
+
 }
 
