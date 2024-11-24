@@ -1,6 +1,7 @@
 package pl.pjatk.rental_service;
 
 import java.time.LocalDate;
+import java.time.temporal.ChronoUnit;
 
 public class Hire {
     private int id;
@@ -21,7 +22,39 @@ public class Hire {
         this.car = car;
     }
 
+    public double calculatePrice() {
+        long days = ChronoUnit.DAYS.between(startDate, endDate);
+        return days * price;
+    }
+
     public Car getCar() {
         return car;
+    }
+
+    public LocalDate getStartDate() {
+        return startDate;
+    }
+
+    public LocalDate getEndDate() {
+        return endDate;
+    }
+
+    public String getFirstName() {
+        return firstName;
+    }
+
+    public String getLastName() {
+        return lastName;
+    }
+
+    @Override
+    public String toString() {
+        return "hire: " +
+                "firstName=" + firstName +
+                ", lastName=" + lastName +
+                ", startDate=" + startDate +
+                ", endDate=" + endDate +
+                ", price per day=" + price +
+                ", " + car + '\n';
     }
 }

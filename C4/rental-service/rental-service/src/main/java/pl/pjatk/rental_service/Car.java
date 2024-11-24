@@ -13,28 +13,14 @@ public class Car {
         this.standard = standard;
     }
 
-    public String getBrand() {
-        return brand;
-    }
-
-    public String getModel() {
-        return model;
-    }
-
     public String getVin() {
         return vin;
     }
 
-    public String getStandard() {
-        return standard;
-    }
-
     @Override
     public String toString() {
-        return "Car{" +
-                "brand='" + brand + '\'' +
-                ", model='" + model + '\'' +
-                ", standard='" + standard + '\'' +
-                '}';
+        return "Car:" + brand +
+                " " + model +
+                " (" + standard + ")";
     }
 }

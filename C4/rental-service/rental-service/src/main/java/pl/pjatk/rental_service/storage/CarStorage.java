@@ -9,8 +9,9 @@ import java.util.List;
 @Component
 public class CarStorage {
     List<Car> catalog;
+
     public CarStorage() {
-        catalog = new ArrayList<Car>();
+        catalog = new ArrayList<>();
         initializeMenu();
     }
 
@@ -23,7 +24,7 @@ public class CarStorage {
     }
 
     public void listOfCars() {
-        System.out.println("Available cars:");
+        System.out.println("Cars:");
         for (Car car : catalog) {
             System.out.println("- " + car);
         }
