@@ -8,6 +8,13 @@ class RentalServiceApplicationTests {
 
 	@Test
 	void contextLoads() {
-	}
+	//GIVEN
 
+
+	//WHEN
+
+
+	//THEN
+
+	}
 }
