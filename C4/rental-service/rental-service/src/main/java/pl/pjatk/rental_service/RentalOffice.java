@@ -23,19 +23,19 @@ public class RentalOffice {
         if (finalizeHire(hire)) {
             carRelease(hire);
         } else {
-            System.out.println("Car hire could not be completed.");
+            System.out.println("Car hire could not be completed.\n");
         }
     }
 
     public void welcome() {
-        System.out.println("Welcome to " + getName() + "!");
-        System.out.println("We are here to help you find the perfect car for your needs.");
+//        System.out.println("Welcome to " + getName() + "!");
+//        System.out.println("We are here to help you find the perfect car for your needs.");
     }
 
     public void chooseCar(Hire hire) {
-        System.out.println("Choose the car you want to hire:");
-        carStorage.listOfCars();
-        System.out.println("Car you selected: " + hire.getCar());
+//        System.out.println("Choose the car you want to hire:");
+//        carStorage.listOfCars();
+//        System.out.println("Car you selected: " + hire.getCar());
     }
 
     public boolean finalizeHire(Hire hire) {
@@ -43,7 +43,8 @@ public class RentalOffice {
         if (isCarAvailable(hire.getCar().getVin(), hire.getStartDate(), hire.getEndDate())) {
             System.out.println("Car is available! Finalizing hire...");
             hireStorage.addHire(hire);
-            double totalPrice = hire.calculatePrice();
+            Car car = hire.getCar();
+            double totalPrice = hire.calculatePrice(car);
             System.out.println("Total price for hire: PLN " + totalPrice);
             return true;
         } else {
@@ -53,9 +54,9 @@ public class RentalOffice {
     }
 
     public void carRelease(Hire hire) {
-        System.out.println("Car hire completed successfully!");
-        System.out.println("Car is being prepared for: " + hire.getFirstName() + " " + hire.getLastName());
-        System.out.println("Details of the " + hire);
+        System.out.println("Car hire completed successfully!\n");
+//        System.out.println("Car is being prepared for: " + hire.getFirstName() + " " + hire.getLastName());
+//        System.out.println("Details of the " + hire);
     }
 
     private boolean isCarAvailable(String vin, LocalDate startDate, LocalDate endDate) {

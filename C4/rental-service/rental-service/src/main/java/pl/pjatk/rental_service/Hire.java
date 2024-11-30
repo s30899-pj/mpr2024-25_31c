@@ -9,22 +9,20 @@ public class Hire {
     private String lastName;
     private LocalDate startDate;
     private LocalDate endDate;
-    private double price;
     private Car car;
 
-    public Hire(int id, String firstName, String lastName, LocalDate startDate, LocalDate endDate, double price, Car car) {
+    public Hire(int id, String firstName, String lastName, LocalDate startDate, LocalDate endDate, Car car) {
         this.id = id;
         this.firstName = firstName;
         this.lastName = lastName;
         this.startDate = startDate;
         this.endDate = endDate;
-        this.price = price;
         this.car = car;
     }
 
-    public double calculatePrice() {
+    public double calculatePrice(Car car) {
         long days = ChronoUnit.DAYS.between(startDate, endDate);
-        return days * price;
+        return days * car.getStandard().getValue();
     }
 
     public Car getCar() {
@@ -54,7 +52,6 @@ public class Hire {
                 ", lastName=" + lastName +
                 ", startDate=" + startDate +
                 ", endDate=" + endDate +
-                ", price per day=" + price +
                 ", " + car + '\n';
     }
 }
