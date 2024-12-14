@@ -18,25 +18,25 @@ public class RentalOffice {
     }
 
     public void hireCar(Hire hire) {
-        welcome();
-        chooseCar(hire);
+//        welcome();
+//        chooseCar(hire);
         if (finalizeHire(hire)) {
             carRelease(hire);
         } else {
             System.out.println("Car hire could not be completed.\n");
         }
     }
+//
+//    public void welcome() {
+////        System.out.println("Welcome to " + getName() + "!");
+////        System.out.println("We are here to help you find the perfect car for your needs.");
+//    }
 
-    public void welcome() {
-//        System.out.println("Welcome to " + getName() + "!");
-//        System.out.println("We are here to help you find the perfect car for your needs.");
-    }
-
-    public void chooseCar(Hire hire) {
-//        System.out.println("Choose the car you want to hire:");
-//        carStorage.listOfCars();
-//        System.out.println("Car you selected: " + hire.getCar());
-    }
+//    public void chooseCar(Hire hire) {
+////        System.out.println("Choose the car you want to hire:");
+////        carStorage.listOfCars();
+////        System.out.println("Car you selected: " + hire.getCar());
+//    }
 
     public boolean finalizeHire(Hire hire) {
         System.out.println("Checking car availability...");
@@ -59,7 +59,7 @@ public class RentalOffice {
 //        System.out.println("Details of the " + hire);
     }
 
-    private boolean isCarAvailable(String vin, LocalDate startDate, LocalDate endDate) {
+    public boolean isCarAvailable(String vin, LocalDate startDate, LocalDate endDate) {
         return hireStorage.getHireList().stream().noneMatch(hire ->
                 hire.getCar().getVin().equals(vin) &&
                         (startDate.isBefore(hire.getEndDate()) && endDate.isAfter(hire.getStartDate()))

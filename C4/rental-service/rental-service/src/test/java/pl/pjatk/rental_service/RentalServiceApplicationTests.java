@@ -6,15 +6,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 @SpringBootTest
 class RentalServiceApplicationTests {
 
-	@Test
-	void contextLoads() {
-	//GIVEN
-
-
-	//WHEN
-
-
-	//THEN
-
-	}
+    @Test
+    void contextLoads() {
+    }
 }
