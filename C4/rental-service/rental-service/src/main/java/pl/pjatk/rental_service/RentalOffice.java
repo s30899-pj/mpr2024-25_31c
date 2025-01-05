@@ -1,19 +1,18 @@
 package pl.pjatk.rental_service;
 
 import org.springframework.stereotype.Component;
-import pl.pjatk.rental_service.storage.CarStorage;
 import pl.pjatk.rental_service.storage.HireStorage;
 
 import java.time.LocalDate;
 
 @Component
 public class RentalOffice {
-    private final CarStorage carStorage;
+    //    private final CarStorage carStorage;
     private final HireStorage hireStorage;
     private final String name = "Car NET";
 
-    public RentalOffice(CarStorage carStorage, HireStorage hireStorage) {
-        this.carStorage = carStorage;
+    public RentalOffice(HireStorage hireStorage) {
+//        this.carStorage = carStorage;
         this.hireStorage = hireStorage;
     }
 
@@ -39,16 +38,15 @@ public class RentalOffice {
 //    }
 
     public boolean finalizeHire(Hire hire) {
-        System.out.println("Checking car availability...");
+//        System.out.println("Checking car availability...");
         if (isCarAvailable(hire.getCar().getVin(), hire.getStartDate(), hire.getEndDate())) {
-            System.out.println("Car is available! Finalizing hire...");
+//            System.out.println("Car is available! Finalizing hire...");
             hireStorage.addHire(hire);
-            Car car = hire.getCar();
-            double totalPrice = hire.calculatePrice(car);
-            System.out.println("Total price for hire: PLN " + totalPrice);
+            double totalPrice = hire.calculatePrice(hire.getCar());
+//            System.out.println("Total price for hire: PLN " + totalPrice);
             return true;
         } else {
-            System.out.println("Sorry, the car is not available for the selected dates.");
+//            System.out.println("Sorry, the car is not available for the selected dates.");
             return false;
         }
     }
@@ -69,4 +67,5 @@ public class RentalOffice {
     public String getName() {
         return name;
     }
+
 }
