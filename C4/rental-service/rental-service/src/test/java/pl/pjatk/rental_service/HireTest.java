@@ -1,11 +1,13 @@
 package pl.pjatk.rental_service;
 
+import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 
 import java.time.LocalDate;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
+@Tag("unit")
 class HireTest {
 
     @Test

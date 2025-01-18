@@ -1,16 +1,17 @@
-package pl.pjatk.rental_service.storage;
+package pl.pjatk.rental_service;
 
 import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
-import pl.pjatk.rental_service.Car;
-import pl.pjatk.rental_service.Hire;
-import pl.pjatk.rental_service.Standard;
+import pl.pjatk.rental_service.storage.HireStorage;
 
 import java.time.LocalDate;
 import java.util.List;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
+
+@Tag("unit")
 class HireStorageTest {
     private HireStorage hireStorage;
 
